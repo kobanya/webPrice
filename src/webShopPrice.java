@@ -26,6 +26,7 @@ public class webShopPrice {
     private JLabel LkartyaKedvezmeny;
 
     private JLabel LkartyakedvezmenyOsszeg;
+    private JButton ClearButton;
 
 
     // Változók   definiálása
@@ -156,6 +157,14 @@ public class webShopPrice {
                 LkartyakedvezmenyOsszeg.setVisible(false);
             }
         });
+
+        ClearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+        // törlés
+                ujValasztas();
+            }
+        });
     }
 
     // az ablak definiálása
@@ -181,7 +190,7 @@ public class webShopPrice {
         subTotal€.setText(reszOszegAr + " €");
         // resz tömeg
         reszOsszegTomeg = sortomeg + coke3Tomeg + coke12Tomeg + hagymaTomeg + konyvTomeg + mosogeoTomeg + mikroTomeg;
-        subTomeg.setText(reszOsszegTomeg + " Kg");
+        subTomeg.setText(reszOsszegTomeg + " kg");
     }
 
     void szallitasiDij() {
@@ -214,5 +223,48 @@ public class webShopPrice {
     void reszosszeg() {
         reszosszegMinuszKedvezmeny = reszOszegAr+ szallitasiDij- termekKedvezmeny;
         LabelReszosszeg.setText(reszosszegMinuszKedvezmeny+" €");
+    }
+    void ujValasztas(){
+        radioButtonSor.setSelected(false);
+        radioButtonCoke.setSelected(false);
+        radioButtonHagyma.setSelected(false);
+        radioButtonCoke6.setSelected(false);
+        radioButtonKonyv.setSelected(false);
+        radioButtonMikro.setSelected(false);
+        radioButtonMosogep.setSelected(false);
+        // árak törlése
+        sor=0;
+        sortomeg=0;
+        coke12=0;
+        coke12Tomeg=0;
+        coke03=0;
+        coke3Tomeg=0;
+        hagyma=0;
+        hagymaTomeg=0;
+        konyv=0;
+        konyvTomeg=0;
+        mosogep=0;
+        mosogeoTomeg=0;
+        mikro=0;
+        mikroTomeg=0;
+        reszOsszegTomeg=0;
+        reszOszegAr=0;
+        subTomegKg=0;
+        katryaKedvezmeny=0;
+        szallitasiDij=0;
+        termekKedvezmeny=0;
+        reszosszegMinuszKedvezmeny=0;
+        LabelReszosszeg.setText("0,- €");
+        subKedvezmeny.setText("0,- €");
+        szaalitas.setText("0,- €");
+        subTomeg.setText("0,0 Kg");
+        subTotal€.setText("0,- €");
+        szallitSzovegMezo.setText("Szállítási díj");
+        szaalitas.setForeground(Color.black);
+        LkartyaKedvezmeny.setVisible(false);
+        LkartyakedvezmenyOsszeg.setVisible(false);
+        szallitSzovegMezo.setForeground(Color.black);
+        total.setText(" 0,- €");
+
     }
 }
