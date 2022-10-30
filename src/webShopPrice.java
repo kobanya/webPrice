@@ -135,13 +135,18 @@ public class webShopPrice {
     }
 
     void szallitasiDij() {
-       if (reszOsszegTomeg < 5.0) {
-           szallitasiDij = 0;
+        if (reszOszegAr > 100) {
+            szallitasiDij = 0;
             szaalitas.setText(szallitasiDij + " €");
         } else {
-            szallitasiDij = reszOsszegTomeg;
-            szaalitas.setText(szallitasiDij + " €");
-        }
+            if (reszOsszegTomeg < 5.0) {
+                szallitasiDij = 0;
+                szaalitas.setText(szallitasiDij + " €");
+            } else {
+                szallitasiDij = reszOsszegTomeg;
+                szaalitas.setText(szallitasiDij + " €");
+            }
 
+        }
     }
 }
