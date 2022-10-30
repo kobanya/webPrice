@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="webShopPrice">
-  <grid id="27dc6" binding="web" layout-manager="GridLayoutManager" row-count="14" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="50" vgap="20">
+  <grid id="27dc6" binding="web" layout-manager="GridLayoutManager" row-count="14" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="50" vgap="20">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="1539" height="639"/>
@@ -10,6 +10,7 @@
       <alignmentY value="1.0"/>
       <autoscrolls value="true"/>
       <font size="20"/>
+      <minimumSize width="1500" height="639"/>
     </properties>
     <border type="none"/>
     <children>
@@ -24,7 +25,7 @@
       </grid>
       <hspacer id="b5766">
         <constraints>
-          <grid row="2" column="3" row-span="1" col-span="4" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="3" row-span="1" col-span="6" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
       </hspacer>
       <vspacer id="ee886">
@@ -35,7 +36,7 @@
       <grid id="ff846" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="12" column="3" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="12" column="3" row-span="1" col-span="4" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font size="22"/>
@@ -57,7 +58,7 @@
       </grid>
       <hspacer id="f7674">
         <constraints>
-          <grid row="6" column="7" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="6" column="9" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="20" height="-1"/>
           </grid>
         </constraints>
@@ -80,7 +81,7 @@
       </component>
       <component id="88bdc" class="javax.swing.JLabel">
         <constraints>
-          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+          <grid row="3" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="327" height="18"/>
           </grid>
         </constraints>
@@ -91,7 +92,7 @@
       </component>
       <component id="f1224" class="javax.swing.JLabel">
         <constraints>
-          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+          <grid row="4" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="327" height="18"/>
           </grid>
         </constraints>
@@ -102,18 +103,21 @@
       </component>
       <component id="fb9c1" class="javax.swing.JButton" binding="buttonKartya">
         <constraints>
-          <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="10" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="327" height="30"/>
           </grid>
         </constraints>
         <properties>
           <font size="28"/>
-          <text value="Kartya / Card"/>
+          <horizontalTextPosition value="2"/>
+          <icon value="visa.png"/>
+          <selected value="true"/>
+          <text value="Kartya / Card    "/>
         </properties>
       </component>
       <component id="eb5af" class="javax.swing.JButton" binding="ButtonKP">
         <constraints>
-          <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="10" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="327" height="30"/>
           </grid>
         </constraints>
@@ -169,12 +173,12 @@
       </component>
       <vspacer id="36cbf">
         <constraints>
-          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+          <grid row="0" column="3" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
             <minimum-size width="-1" height="20"/>
           </grid>
         </constraints>
       </vspacer>
-      <component id="78f50" class="javax.swing.JLabel">
+      <component id="78f50" class="javax.swing.JLabel" binding="szallitSzovegMezo">
         <constraints>
           <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -185,18 +189,36 @@
       </component>
       <vspacer id="ffd9a">
         <constraints>
-          <grid row="13" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+          <grid row="13" column="6" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
             <minimum-size width="-1" height="30"/>
           </grid>
         </constraints>
       </vspacer>
       <component id="d16f7" class="javax.swing.JLabel" binding="Kedvezmeny">
         <constraints>
-          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font size="24"/>
           <text value="Kedvezmény / Discount"/>
+        </properties>
+      </component>
+      <component id="602a" class="javax.swing.JLabel" binding="reszOsszegTotal">
+        <constraints>
+          <grid row="7" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="24"/>
+          <text value="Részösszeg / Subtotal"/>
+        </properties>
+      </component>
+      <component id="f1f3e" class="javax.swing.JLabel" binding="LkartyaKedvezmeny">
+        <constraints>
+          <grid row="8" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="24"/>
+          <text value="Kartyakedvezmény / Card d."/>
         </properties>
       </component>
       <component id="8950" class="javax.swing.JRadioButton" binding="radioButtonSor">
@@ -211,14 +233,28 @@
       </component>
       <hspacer id="72b5c">
         <constraints>
-          <grid row="3" column="7" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="3" column="9" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="30" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <hspacer id="7e3fb">
+        <constraints>
+          <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="20" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <hspacer id="bfde9">
+        <constraints>
+          <grid row="12" column="9" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="70" height="-1"/>
           </grid>
         </constraints>
       </hspacer>
       <component id="93075" class="javax.swing.JLabel" binding="subTotal€">
         <constraints>
-          <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="4" anchor="8" fill="0" indent="0" use-parent-layout="false">
+          <grid row="3" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="4" anchor="4" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="29" height="29"/>
           </grid>
         </constraints>
@@ -229,7 +265,7 @@
       </component>
       <component id="70bd0" class="javax.swing.JLabel" binding="subTomeg">
         <constraints>
-          <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+          <grid row="4" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="29" height="26"/>
           </grid>
         </constraints>
@@ -238,38 +274,53 @@
           <text value="0"/>
         </properties>
       </component>
-      <component id="80ae8" class="javax.swing.JLabel" binding="szaalitas">
+      <component id="518c4" class="javax.swing.JLabel" binding="subKedvezmeny">
         <constraints>
-          <grid row="5" column="5" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font size="26"/>
-          <text value="0"/>
-        </properties>
-      </component>
-      <component id="518c4" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="6" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font size="28"/>
-          <text value="0"/>
+          <requestFocusEnabled value="false"/>
+          <text value="  0  "/>
+          <verifyInputWhenFocusTarget value="false"/>
         </properties>
       </component>
-      <hspacer id="7e3fb">
+      <component id="a0b32" class="javax.swing.JLabel" binding="LabelReszosszeg">
         <constraints>
-          <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="20" height="-1"/>
-          </grid>
+          <grid row="7" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
-      </hspacer>
-      <hspacer id="bfde9">
+        <properties>
+          <font size="28"/>
+          <requestFocusEnabled value="false"/>
+          <text value="  0  "/>
+          <verifyInputWhenFocusTarget value="false"/>
+        </properties>
+      </component>
+      <component id="41ebf" class="javax.swing.JLabel" binding="LkartyakedvezmenyOsszeg">
         <constraints>
-          <grid row="12" column="7" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="70" height="-1"/>
-          </grid>
+          <grid row="8" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
-      </hspacer>
+        <properties>
+          <font size="28"/>
+          <requestFocusEnabled value="false"/>
+          <text value="  0  "/>
+          <verifyInputWhenFocusTarget value="false"/>
+        </properties>
+      </component>
+      <component id="80ae8" class="javax.swing.JLabel" binding="szaalitas">
+        <constraints>
+          <grid row="5" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="26"/>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <opaque value="false"/>
+          <requestFocusEnabled value="false"/>
+          <text value=" 0  "/>
+          <verticalAlignment value="0"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

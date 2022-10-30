@@ -19,6 +19,14 @@ public class webShopPrice {
     private JRadioButton radioButtonCoke6;
     private JLabel Kedvezmeny;
     private JLabel szaalitas;
+    private JLabel szallitSzovegMezo;
+    private JLabel subKedvezmeny;
+    private JLabel reszOsszegTotal;
+    private JLabel LabelReszosszeg;
+    private JLabel LkartyaKedvezmeny;
+
+    private JLabel LkartyakedvezmenyOsszeg;
+
 
     // Változók   definiálása
     public int totalTotal = 0;
@@ -41,9 +49,16 @@ public class webShopPrice {
     public double mikroTomeg;
     public double szallitasiDij;
     public double subTomegKg;
+    public double termekKedvezmeny;
+    public double reszosszegMinuszKedvezmeny;
+    public double  katryaKedvezmeny;
+    public double  kartyKedvezmenyOsszeg;
 
     // a SÖR kiválasztása
     public webShopPrice() {
+        LkartyaKedvezmeny.setVisible(false);
+        LkartyakedvezmenyOsszeg.setVisible(false);
+    // termékválasztás
         radioButtonSor.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -51,6 +66,8 @@ public class webShopPrice {
                 sortomeg = 0.2;
                 ujraszamol();
                 szallitasiDij();
+                kedvezmeny();
+                reszosszeg();
 
             }
         });
@@ -61,6 +78,8 @@ public class webShopPrice {
                 coke3Tomeg = 0.3;
                 ujraszamol();
                 szallitasiDij();
+                kedvezmeny();
+                reszosszeg();
             }
         });
         radioButtonCoke6.addActionListener(new ActionListener() {
@@ -70,6 +89,8 @@ public class webShopPrice {
                 coke12Tomeg = 12.0;
                 ujraszamol();
                 szallitasiDij();
+                kedvezmeny();
+                reszosszeg();
             }
         });
         radioButtonHagyma.addActionListener(new ActionListener() {
@@ -79,6 +100,8 @@ public class webShopPrice {
                 hagymaTomeg = 1.0;
                 ujraszamol();
                 szallitasiDij();
+                kedvezmeny();
+                reszosszeg();
             }
         });
         radioButtonKonyv.addActionListener(new ActionListener() {
@@ -88,6 +111,8 @@ public class webShopPrice {
                 konyvTomeg = 1.0;
                 ujraszamol();
                 szallitasiDij();
+                kedvezmeny();
+                reszosszeg();
             }
         });
         radioButtonMosogep.addActionListener(new ActionListener() {
@@ -97,6 +122,8 @@ public class webShopPrice {
                 mosogeoTomeg = 10;
                 ujraszamol();
                 szallitasiDij();
+                kedvezmeny();
+                reszosszeg();
             }
         });
         radioButtonMikro.addActionListener(new ActionListener() {
@@ -106,6 +133,27 @@ public class webShopPrice {
                 mikroTomeg = 1.5;
                 ujraszamol();
                 szallitasiDij();
+                kedvezmeny();
+                reszosszeg();
+            }
+        });
+        buttonKartya.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            kartyKedvezmenyOsszeg=reszOszegAr*0.13;
+            LkartyakedvezmenyOsszeg.setText(Math.round(kartyKedvezmenyOsszeg)+" €");
+            katryaKedvezmeny = reszOszegAr-reszOszegAr * 0.13  ;
+            total.setText(Math.round(katryaKedvezmeny )+" €");
+                LkartyaKedvezmeny.setVisible(true);
+                LkartyakedvezmenyOsszeg.setVisible(true);
+            }
+        });
+        ButtonKP.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            total.setText(reszosszegMinuszKedvezmeny + " €");
+                LkartyaKedvezmeny.setVisible(false);
+                LkartyakedvezmenyOsszeg.setVisible(false);
             }
         });
     }
@@ -116,6 +164,7 @@ public class webShopPrice {
         frame.setContentPane(new webShopPrice().web);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+
 // az ablak megnyitása a monitor közepén
 
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
@@ -123,6 +172,7 @@ public class webShopPrice {
         int y = (int) ((dimension.getHeight() - frame.getHeight()) / 2);
         frame.setLocation(x, y);
         frame.setVisible(true);
+
     }
 
 
@@ -137,6 +187,9 @@ public class webShopPrice {
     void szallitasiDij() {
         if (reszOszegAr > 100) {
             szallitasiDij = 0;
+            szallitSzovegMezo.setForeground(Color.red);
+            szallitSzovegMezo.setText("Díjmentes szállítás/ Free");
+            szaalitas.setForeground(Color.red);
             szaalitas.setText(szallitasiDij + " €");
         } else {
             if (reszOsszegTomeg < 5.0) {
@@ -148,5 +201,18 @@ public class webShopPrice {
             }
 
         }
+    }
+    void kedvezmeny() {
+        if (reszOszegAr>200){
+            termekKedvezmeny = reszOszegAr *  0.10;
+
+            // kerekített kedvezmény
+            subKedvezmeny.setText(Math.round(termekKedvezmeny) + " €");
+        }
+    }
+
+    void reszosszeg() {
+        reszosszegMinuszKedvezmeny = reszOszegAr+ szallitasiDij- termekKedvezmeny;
+        LabelReszosszeg.setText(reszosszegMinuszKedvezmeny+" €");
     }
 }
