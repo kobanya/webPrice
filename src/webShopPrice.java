@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
 public class webShopPrice {
     private JRadioButton radioButtonSor;
@@ -27,6 +28,13 @@ public class webShopPrice {
 
     private JLabel LkartyakedvezmenyOsszeg;
     private JButton ClearButton;
+    private JLabel mosoGep;
+    private JLabel mikroKep;
+    private JLabel Lkonyv;
+    private JLabel Lhagyma;
+    private JLabel LCoke6;
+    private JLabel Lsor;
+    private JLabel Lcoke033;
 
 
     // Változók   definiálása
@@ -42,29 +50,39 @@ public class webShopPrice {
     public int konyv;
     public double konyvTomeg;
     // szamoláshoz szükséges  változók definiálása
-    public int reszOszegAr = 0;
+    public double reszOszegAr = 0;
     public double reszOsszegTomeg = 0;
     public int mosogep;
     public double mosogeoTomeg;
-    public int mikro;
+    public int Lmikro;
     public double mikroTomeg;
     public double szallitasiDij;
     public double subTomegKg;
     public double termekKedvezmeny;
     public double reszosszegMinuszKedvezmeny;
     public double  katryaKedvezmeny;
+    ;
     public double  kartyKedvezmenyOsszeg;
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     // a SÖR kiválasztása
     public webShopPrice() {
         LkartyaKedvezmeny.setVisible(false);
         LkartyakedvezmenyOsszeg.setVisible(false);
+        mosoGep.setVisible(false);
+        mikroKep.setVisible(false);
+        Lkonyv.setVisible(false);
+        Lhagyma.setVisible(false);
+        LCoke6.setVisible(false);
+        Lsor.setVisible(false);
+        Lcoke033.setVisible(false);
     // termékválasztás
         radioButtonSor.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 sor = 4;
                 sortomeg = 0.2;
+                Lsor.setVisible(true);
                 ujraszamol();
                 szallitasiDij();
                 kedvezmeny();
@@ -77,6 +95,7 @@ public class webShopPrice {
             public void actionPerformed(ActionEvent e) {
                 coke03 = 3;
                 coke3Tomeg = 0.3;
+                Lcoke033.setVisible(true);
                 ujraszamol();
                 szallitasiDij();
                 kedvezmeny();
@@ -88,6 +107,7 @@ public class webShopPrice {
             public void actionPerformed(ActionEvent e) {
                 coke12 = 10;
                 coke12Tomeg = 12.0;
+                LCoke6.setVisible(true);
                 ujraszamol();
                 szallitasiDij();
                 kedvezmeny();
@@ -99,6 +119,7 @@ public class webShopPrice {
             public void actionPerformed(ActionEvent e) {
                 hagyma = 5;
                 hagymaTomeg = 1.0;
+                Lhagyma.setVisible(true);
                 ujraszamol();
                 szallitasiDij();
                 kedvezmeny();
@@ -110,6 +131,7 @@ public class webShopPrice {
             public void actionPerformed(ActionEvent e) {
                 konyv = 50;
                 konyvTomeg = 1.0;
+                Lkonyv.setVisible(true);
                 ujraszamol();
                 szallitasiDij();
                 kedvezmeny();
@@ -121,6 +143,7 @@ public class webShopPrice {
             public void actionPerformed(ActionEvent e) {
                 mosogep = 250;
                 mosogeoTomeg = 10;
+                mosoGep.setVisible(true);
                 ujraszamol();
                 szallitasiDij();
                 kedvezmeny();
@@ -130,21 +153,25 @@ public class webShopPrice {
         radioButtonMikro.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                mikro = 99;
+                Lmikro = 99;
                 mikroTomeg = 1.5;
+                mikroKep.setVisible(true);
+                
                 ujraszamol();
                 szallitasiDij();
                 kedvezmeny();
                 reszosszeg();
             }
         });
+    // gomok definiálása
         buttonKartya.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
             kartyKedvezmenyOsszeg=reszOszegAr*0.13;
-            LkartyakedvezmenyOsszeg.setText(Math.round(kartyKedvezmenyOsszeg)+" €");
-            katryaKedvezmeny = reszOszegAr-reszOszegAr * 0.13  ;
-            total.setText(Math.round(katryaKedvezmeny )+" €");
+            LkartyakedvezmenyOsszeg.setText(df.format(kartyKedvezmenyOsszeg)+" €");
+            katryaKedvezmeny= reszOszegAr-reszOszegAr * 0.13  ;
+
+            total.setText(df.format(katryaKedvezmeny )+" €");
                 LkartyaKedvezmeny.setVisible(true);
                 LkartyakedvezmenyOsszeg.setVisible(true);
             }
@@ -186,7 +213,7 @@ public class webShopPrice {
 
 
     void ujraszamol() {
-        reszOszegAr = sor + coke03 + coke12 + hagyma + konyv + mosogep + mikro;
+        reszOszegAr = sor + coke03 + coke12 + hagyma + konyv + mosogep + Lmikro;
         subTotal€.setText(reszOszegAr + " €");
         // resz tömeg
         reszOsszegTomeg = sortomeg + coke3Tomeg + coke12Tomeg + hagymaTomeg + konyvTomeg + mosogeoTomeg + mikroTomeg;
@@ -216,12 +243,13 @@ public class webShopPrice {
             termekKedvezmeny = reszOszegAr *  0.10;
 
             // kerekített kedvezmény
-            subKedvezmeny.setText(Math.round(termekKedvezmeny) + " €");
+            subKedvezmeny.setText(df.format(termekKedvezmeny) + " €");
         }
     }
 
     void reszosszeg() {
         reszosszegMinuszKedvezmeny = reszOszegAr+ szallitasiDij- termekKedvezmeny;
+
         LabelReszosszeg.setText(reszosszegMinuszKedvezmeny+" €");
     }
     void ujValasztas(){
@@ -245,7 +273,7 @@ public class webShopPrice {
         konyvTomeg=0;
         mosogep=0;
         mosogeoTomeg=0;
-        mikro=0;
+        Lmikro =0;
         mikroTomeg=0;
         reszOsszegTomeg=0;
         reszOszegAr=0;
@@ -257,7 +285,7 @@ public class webShopPrice {
         LabelReszosszeg.setText("0,- €");
         subKedvezmeny.setText("0,- €");
         szaalitas.setText("0,- €");
-        subTomeg.setText("0,0 Kg");
+        subTomeg.setText("0 kg");
         subTotal€.setText("0,- €");
         szallitSzovegMezo.setText("Szállítási díj");
         szaalitas.setForeground(Color.black);
@@ -265,6 +293,13 @@ public class webShopPrice {
         LkartyakedvezmenyOsszeg.setVisible(false);
         szallitSzovegMezo.setForeground(Color.black);
         total.setText(" 0,- €");
-
+        mosoGep.setVisible(false);
+        mikroKep.setVisible(false);
+        Lkonyv.setVisible(false);
+        Lhagyma.setVisible(false);
+        LCoke6.setVisible(false);
+        Lsor.setVisible(false);
+        Lcoke033.setVisible(false);
+        
     }
 }
