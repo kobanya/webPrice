@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
 public class webShopPrice {
@@ -63,7 +64,7 @@ public class webShopPrice {
     public double  katryaKedvezmeny;
     ;
     public double  kartyKedvezmenyOsszeg;
-    private static final DecimalFormat df = new DecimalFormat("0.00");
+    private static final DecimalFormat df = new DecimalFormat("0.0");
 
     // a SÖR kiválasztása
     public webShopPrice() {
@@ -167,9 +168,10 @@ public class webShopPrice {
         buttonKartya.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            kartyKedvezmenyOsszeg=reszOszegAr*0.13;
+            kartyKedvezmenyOsszeg=reszOszegAr*0.03;
+            df.setRoundingMode(RoundingMode.UP);
             LkartyakedvezmenyOsszeg.setText(df.format(kartyKedvezmenyOsszeg)+" €");
-            katryaKedvezmeny= reszOszegAr-reszOszegAr * 0.13  ;
+            katryaKedvezmeny= reszosszegMinuszKedvezmeny * 0.97;
 
             total.setText(df.format(katryaKedvezmeny )+" €");
                 LkartyaKedvezmeny.setVisible(true);
