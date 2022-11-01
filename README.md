@@ -9,3 +9,6 @@ R3 The delivery remains free if the price of the goods exceeds 100 euros. <BR>
 R4 If the customer prepays with a credit card, then s/he gets 3% price reduction from the reduced price of the goods. <BR>
 R5 If the price reaches 200 euros and the customer pays with credit card, and the weight is under 5 kg, then the customer gets a 15% price reduction for the original price of the goods. <BR>
 R6 The output is the price to be paid. Minimum price difference is EUR 0.1, minimum weight difference is 0.1 kg. <BR>
+  
+  ![image](https://user-images.githubusercontent.com/109758820/199241321-501d16af-88ac-4954-bf2b-18900a7aeabd.png)
+
